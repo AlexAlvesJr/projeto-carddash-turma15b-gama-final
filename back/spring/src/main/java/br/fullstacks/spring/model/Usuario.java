@@ -10,7 +10,7 @@ import javax.persistence.Table;
 // pessoa que faz login, acessa e usa o sistema
 
 @Entity // javax.persistence classe mapeada no banco de dados
-@Table(name = "usuario")    // nome da tabela no banco de dados
+@Table(name = "tbl_usuario")    // nome da tabela no banco de dados
 public class Usuario {
 
     @Id // indica que é chave primária no banco de dados

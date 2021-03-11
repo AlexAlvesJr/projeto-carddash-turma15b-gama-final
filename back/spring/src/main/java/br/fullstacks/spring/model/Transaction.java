@@ -1,7 +1,5 @@
 package br.fullstacks.spring.model;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -50,11 +48,11 @@ public class Transaction {
         this.id_transacao = id_transacao;
     }
 
-    public Date getData_hora() {
+    public String getData_hora() {
         return data_hora;
     }
 
-    public void setData_hora(Date data_hora) {
+    public void setData_hora(String data_hora) {
         this.data_hora = data_hora;
     }
 
