@@ -19,48 +19,40 @@ public class AgFinanceiro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_agente")
-    private int id_agente;
+    private int idAgente;
 
     @Column(name = "nome_agente", length = 100, nullable = false)
-    private String nome_agente;
+    private String nomeAgente;
 
     @Column(name = "volume_transacional", nullable = false)
-    private double volume_transacional;
+    private double volumeTransacional;
         
     @OneToMany(mappedBy = "agFinanceiro")    // relacionamento da tabela / classe AgFinanceiro com Transaction
     @JsonIgnoreProperties("agFinanceiro")    // não exibe na tela. Não retorna o atributos usuario da tabela / classe Compras para evitar erro de loop
     private List<Transaction> transactions;    // por serem várias compras (OneToMany), usamos o List
+
+    public int getIdAgente() {
+        return idAgente;
+    }
+
+    public void setIdAgente(int idAgente) {
+        this.idAgente = idAgente;
+    }
+
+    public String getNomeAgente() {
+        return nomeAgente;
+    }
+
+    public void setNomeAgente(String nomeAgente) {
+        this.nomeAgente = nomeAgente;
+    }
+
+    public double getVolumeTransacional() {
+        return volumeTransacional;
+    }
+
+    public void setVolumeTransacional(double volumeTransacional) {
+        this.volumeTransacional = volumeTransacional;
+    }
     
-    public int getId_agente() {
-        return id_agente;
-    }
-
-    public void setId_agente(int id_agente) {
-        this.id_agente = id_agente;
-    }
-
-    public String getNome_agente() {
-        return nome_agente;
-    }
-
-    public void setNome_agente(String nome_agente) {
-        this.nome_agente = nome_agente;
-    }
-
-    public double getVolume_transacional() {
-        return volume_transacional;
-    }
-
-    public void setVolume_transacional(double volume_transacional) {
-        this.volume_transacional = volume_transacional;
-    }
-
-    public List<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
-    }
-
 }

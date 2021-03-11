@@ -1,5 +1,11 @@
 package br.fullstacks.spring.repository;
 
-public class AgFinanceiroRepo {
-    
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import br.fullstacks.spring.model.AgFinanceiro;
+
+public interface AgFinanceiroRepo extends CrudRepository<AgFinanceiro, Integer> {    
+    public List<AgFinanceiro> findTop10ByOrderByVolumeTransacionalDesc();
 }
