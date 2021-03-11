@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 import br.fullstacks.spring.dto.UsuarioDTO;
-import br.fullstacks.spring.model.Compra;
 import br.fullstacks.spring.model.Usuario;
 import br.fullstacks.spring.repository.UsuarioRepo;
 
@@ -40,42 +37,9 @@ public class UsuarioController {
         return ResponseEntity.notFound().build();   // notFound = 404 quando não tem conteudo dentro do .ok /.notFound precisa do .build
     }
 
-    @GetMapping("/compras/{id}") // {id} é o nome da variável
-    public ResponseEntity<List<Compra>> obterComprasDoUsuarioPorId(@PathVariable int id) {    // referencia a variável {id} do GgetMapping        
-        Usuario usuarioEncontrado = repo.findById(id).orElse(null); // findById busca pela chave primária
-        
-        if (usuarioEncontrado != null) {
-            List<Compra> compras = usuarioEncontrado.getCompras();
-            for (Compra compra : compras) {
-                compra.setUsuario(null);
-            }
-            return ResponseEntity.ok(compras);    // ok = 200
-        }
-        
-        return ResponseEntity.notFound().build();   // notFound = 404 quando não tem conteudo dentro do .ok /.notFound precisa do .build
-    }
-
-    @GetMapping("/all")
-    public ResponseEntity<List<Usuario>> listarUsuarios() {
-        List<Usuario> lista = (List<Usuario>) repo.findAll();   //findAll = listar todos
-            
-        return ResponseEntity.ok(lista);
-    }
-
-    @PostMapping("/loginemail")
-    public ResponseEntity<Usuario> loginByEmail(@RequestBody Usuario user) {    // no corpo da requisição virá um usuário
-        Usuario userFound = repo.findByEmailAndSenha(user.getEmail(), user.getSenha());
-
-        if (userFound != null) {
-            userFound.setSenha("********");
-            return ResponseEntity.ok(userFound);
-        }
-        return ResponseEntity.status(404).build();  // Not Found
-    }
-
     @PostMapping("/login")
     public ResponseEntity<UsuarioDTO> login(@RequestBody Usuario user) {    // no corpo da requisição virá um usuário
-        Usuario userFound = repo.findByEmailOrCpf(user.getEmail(), user.getCpf());
+        Usuario userFound = repo.findByEmailOrRacf(user.getEmail(), user.getRacf());
 
         if (userFound != null) {
             if (user.getSenha().equals(userFound.getSenha())) {                

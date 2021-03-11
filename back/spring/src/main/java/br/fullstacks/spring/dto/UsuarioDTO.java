@@ -5,12 +5,12 @@ import br.fullstacks.spring.model.Usuario;
 public class UsuarioDTO {
     private String nome;
     private String email;
-    private String cpf;
+    private String racf;
 
     public UsuarioDTO(Usuario usuario) {
         this.nome = usuario.getNome();
         this.email = usuario.getEmail();
-        this.cpf = usuario.getCpf();
+        this.racf = usuario.getRacf();
     }
 
     public String getNome() {
@@ -29,12 +29,12 @@ public class UsuarioDTO {
         this.email = email;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getRacf() {
+        return racf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setRacf(String racf) {
+        this.racf = racf;
     }
     
 }

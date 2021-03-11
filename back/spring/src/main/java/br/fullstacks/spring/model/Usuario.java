@@ -1,16 +1,11 @@
 package br.fullstacks.spring.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // pessoa que faz login, acessa e usa o sistema
 
@@ -23,21 +18,20 @@ public class Usuario {
     @Column(name = "id")    // nome da coluna no banco de dados
     private int id;
 
-    @Column(name = "nome", length = 150, nullable = false)  // coluna nome com registro em até 150 varchar not null 
+    @Column(name = "nome", length = 100, nullable = false)  // coluna nome com registro em até 150 varchar not null 
     private String nome;
 
-    @Column(name = "cpf", length = 11, nullable = false, unique = true) // coluna cpf para registros até 11 varchar not null e sem duplicidade
-    private String cpf;
+    @Column(name = "linkfoto", length = 200, nullable = true)
+    private String linkfoto;
 
-    @Column(name = "email", length = 30, nullable = false, unique = true)   // coluna email para registros até 30 varchar not null e sem duplicidade
+    @Column(name = "racf", length = 7, nullable = false, unique = true) // coluna cpf para registros até 11 varchar not null e sem duplicidade
+    private String racf;
+
+    @Column(name = "email", length = 100, nullable = false, unique = true)   // coluna email para registros até 30 varchar not null e sem duplicidade
     private String email;
 
-    @Column(name = "senha", length = 20, nullable = false)  // coluna senha para registros até 20 varchar not null e sem duplicidade
+    @Column(name = "senha", length = 30, nullable = true)  // coluna senha para registros até 20 varchar not null e sem duplicidade
     private String senha;
-
-    @OneToMany(mappedBy = "usuario")    // relacionamento da tabela / classe Usuário com Compra
-    @JsonIgnoreProperties("usuario")    // não exibe na tela. Não retorna o atributos usuario da tabela / classe Compras para evitar erro de loop
-    private List<Compra> compras;    // por serem várias compras (OneToMany), usamos o List
 
     public int getId() {
         return id;
@@ -55,12 +49,12 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getRacf() {
+        return racf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setRacf(String racf) {
+        this.racf = racf;
     }
 
     public String getEmail() {
@@ -79,12 +73,12 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public List<Compra> getCompras() {
-        return compras;
+    public String getLinkfoto() {
+        return linkfoto;
     }
 
-    public void setCompras(List<Compra> compras) {
-        this.compras = compras;
+    public void setLinkfoto(String linkfoto) {
+        this.linkfoto = linkfoto;
     }
 
 }
