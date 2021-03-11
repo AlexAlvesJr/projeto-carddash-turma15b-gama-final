@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes Parceiros</title>
+    <script src="../js/agentes.js"></script>
+
+    <!-- Chamada da biblioteca externa do CSS em BootStrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Chamada da biblioteca externa do JS em BootStrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+    <!-- Chamando uma biblioteca externa -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+</head>
+
+<body>
+    <div class="row div1">
+        <div class="col-lg-3 col-md-3 col-sm-3 div1">
+            <a href="../html/index.html"><img src="../img/logo_itau_laranja.jpg" width="100" height="100"></a>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 div1"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 div1"><br><b>DashCard System</b><br></div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3" align=left">
+            <img src="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg" width="100"
+                height="100">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6" align=left><br><b>Usuário (RACF)</b><br></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="submit" onclick="return logout()" value="Logout">
+        </div>
+    </div>
+    <br><br><br><br>
+
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3" align=right>
+            Parceiro:
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7">
+            <!-- Criando o componente dropdown ou caixa de listagem -->
+            <select required>
+                <option value=""></option>
+                <option value="Parceiro1" name="curso">Parceiro 1</option>
+                <option value="Parceiro2" name="curso">Parceiro 2</option>
+                <option value="Parceiro3" name="curso">Parceiro 3</option>
+                <option value="Parceiro4" name="curso">Parceiro 4</option>
+                <option value="Parceiro5" name="curso">Parceiro 5</option>
+                <option value="Parceiro6" name="curso">Parceiro 6</option>
+                <option value="Parceiro7" name="curso">Parceiro 7</option>
+                <option value="Parceiro8" name="curso">Parceiro 8</option>
+                <option value="Parceiro9" name="curso">Parceiro 9</option>
+                <option value="Parceiro10" name="curso">Parceiro 10</option>
+            </select><br><br>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3"><b>Top 10 Parceiros</b></div>
+        <div class="col-lg-7 col-md-7 col-sm-7">
+            <!--<input type="button" onclick="exibirParceiros(10)" value="Tabela">--><br><br>
+
+        </div>
+    </div>
+
+   
+
+
+
+</body>
+
+</html>
