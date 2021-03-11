@@ -1,4 +1,5 @@
-function login() {
+function login(event) {
+    event.preventDefault()
 
     let user = document.getElementById("nome").value
     let senha = document.getElementById("senha").value
@@ -21,17 +22,19 @@ function login() {
 
 
     fetch("http://localhost:8080/user/login", mensagem)
-        .then(res => validaLogin(res))
+        .then(console.log(mensagem)).then(res => validaLogin(res))
 
 }
 
 function validaLogin(resultado) {
-    if (nome.length < 7 || resultado.status != 200) {
+    if (resultado.status == 200) {
+        resultado.json().then(res => efetuaLogin(res))
+    } else {
+        //console.log("Senha inválida")
         alert("Usuário ou senha inválido! Digite RACF/e-mail e senha para autenticação.")
-        user.focus();
-        return false
+        //document.getElementById("msgError").innetHTML = "Usuário ou senha inválido! Digite RACF/e-mail e senha para autenticação."
     }
-    resultado.json().then(res => efetuaLogin(res))
+    
 }
 
 function efetuaLogin(usuario) {
@@ -40,12 +43,6 @@ function efetuaLogin(usuario) {
     window.location = "agentes.html"
     
 
-}
-
-function getUser(params) {
-    return document.getElementById("nome").innerHTML
-     
-    
 }
 
 
