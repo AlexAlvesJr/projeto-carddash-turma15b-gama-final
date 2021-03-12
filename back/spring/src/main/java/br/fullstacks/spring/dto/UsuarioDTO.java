@@ -6,11 +6,13 @@ public class UsuarioDTO {
     private String nome;
     private String email;
     private String racf;
+    private String linkFoto;
 
     public UsuarioDTO(Usuario usuario) {
         this.nome = usuario.getNome();
         this.email = usuario.getEmail();
         this.racf = usuario.getRacf();
+        this.linkFoto = usuario.getLinkfoto();
     }
 
     public String getNome() {
@@ -35,6 +37,14 @@ public class UsuarioDTO {
 
     public void setRacf(String racf) {
         this.racf = racf;
+    }
+
+    public String getLinkFoto() {
+        return linkFoto;
+    }
+
+    public void setLinkFoto(String linkFoto) {
+        this.linkFoto = linkFoto;
     }
     
 }

@@ -28,64 +28,102 @@
 
 </head>
 
-<body>
-    <div class="row div1">
-        <div class="col-lg-3 col-md-3 col-sm-3 div1">
-            <a href="../html/index.html"><img src="../img/logo_itau_laranja.jpg" width="100" height="100"></a>
+<body onload="validaLogin()">
+    <div class="container-fluid">
+        <div class="row div1">
+            <div class="col-lg-3 col-md-3 col-sm-3 div1"><img src="../img/logo_itau_laranja.jpg" width="100"
+                    height="100"></div>
+            <div class="col-lg-7 col-md-7 col-sm-7 div1"></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 div1"><br><b>DashCard System</b><br></div>
         </div>
-        <div class="col-lg-7 col-md-7 col-sm-7 div1"></div>
-        <div class="col-lg-2 col-md-2 col-sm-2 div1"><br><b>DashCard System</b><br></div>
+
+        <div class="row justify-content-end">
+            <div class="col-1">
+                <input type="submit" onclick="return logout()" value="Logout">
+            </div>
+
+        </div>
+
+
+        <div class="row w-100">
+            <div class="col-lg-2 col-md-2 col-sm-2" style="margin-left: 15px;" id="imgUser"></div>
+            <div class="col-8 my-auto" id="dadosUser" style="margin-left: 0px"></div>
+
+        </div>
+        <br><br>
+
+
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"></div>
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <!-- Criando o componente dropdown ou caixa de listagem -->
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Selecione o parceiro
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/html/transacoes.html?id=10" id="drop0"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=9" id="drop1"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=5" id="drop2"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=2" id="drop3"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=4" id="drop4"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=6" id="drop5"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=3" id="drop6"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=1" id="drop7"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=8" id="drop8"></a>
+                        <a class="dropdown-item" href="/html/transacoes.html?id=7" id="drop9"></a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <br>
 
-    <div class="row">
-        <div class="col-lg-1 col-md-1 col-sm-1"></div>
-        <div class="col-lg-3 col-md-3 col-sm-3" align=left">
-            <img src="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg" width="100"
-                height="100">
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6" align=left><br><b>Usuário (RACF)</b><br></div>
-        <div class="col-lg-2 col-md-2 col-sm-2 ">
-            <input type="submit" onclick="return logout()" value="Logout">
-        </div>
-    </div>
-    <br><br><br><br>
 
+    <!--
     <div class="row">
         <div class="col-lg-1 col-md-1 col-sm-1"></div>
         <div class="col-lg-3 col-md-3 col-sm-3" align=right>
             Parceiro:
         </div>
         <div class="col-lg-7 col-md-7 col-sm-7">
-            <!-- Criando o componente dropdown ou caixa de listagem -->
             <select required>
                 <option value=""></option>
-                <option value="Parceiro1" name="curso">Parceiro 1</option>
-                <option value="Parceiro2" name="curso">Parceiro 2</option>
-                <option value="Parceiro3" name="curso">Parceiro 3</option>
-                <option value="Parceiro4" name="curso">Parceiro 4</option>
-                <option value="Parceiro5" name="curso">Parceiro 5</option>
-                <option value="Parceiro6" name="curso">Parceiro 6</option>
-                <option value="Parceiro7" name="curso">Parceiro 7</option>
-                <option value="Parceiro8" name="curso">Parceiro 8</option>
-                <option value="Parceiro9" name="curso">Parceiro 9</option>
-                <option value="Parceiro10" name="curso">Parceiro 10</option>
+                <option value="Parceiro1" name="curso" id="drop0"></option>
+                <option value="Parceiro2" name="curso" id="drop1"></option>
+                <option value="Parceiro3" name="curso" id="drop2"></option>
+                <option value="Parceiro4" name="curso" id="drop3"></option>
+                <option value="Parceiro5" name="curso" id="drop4"></option>
+                <option value="Parceiro6" name="curso" id="drop5"></option>
+                <option value="Parceiro7" name="curso" id="drop6"></option>
+                <option value="Parceiro8" name="curso" id="drop7"></option>
+                <option value="Parceiro9" name="curso" id="drop8"></option>
+                <option value="Parceiro10" name="curso" id="drop9"></option>
             </select><br><br>
         </div>
     </div>
-    <br><br><br>
+    <br>
+    -->
+
 
     <div class="row">
-        <div class="col-lg-1 col-md-1 col-sm-1"></div>
-        <div class="col-lg-3 col-md-3 col-sm-3"><b>Top 10 Parceiros</b></div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
         <div class="col-lg-7 col-md-7 col-sm-7">
-            <!--<input type="button" onclick="exibirParceiros(10)" value="Tabela">--><br><br>
-
+            <h3>Top 10 Parceiros</h3>
         </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div><br><br>
     </div>
 
-   
-
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8" id="saida"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+    </div>
 
 
 </body>
