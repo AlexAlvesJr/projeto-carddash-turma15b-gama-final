@@ -58,8 +58,13 @@ function exibirParceiros (parceiros) {
         
         let count = parceiros[index].count
         let nome = parceiros[index].agente
-        let volume = parceiros[index].volumeTransacional
-        document.getElementById("nome").innerHTML = nome + " / R$ " + volume 
+        //let volume = parceiros[index].volumeTransacional
+
+        let volume = parceiros[index].volumeTransacional.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+        
+
+        document.getElementById("nome").innerHTML = nome + " / " + volume 
 
         document.getElementById("saida"+index).innerHTML = count
         
